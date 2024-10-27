@@ -1,0 +1,26 @@
+<div class="container">
+  <!-- Left side with title text and Search button -->
+  <div class="text-section">
+    <h1>Choose the convenient date range for you</h1>
+
+    <!-- Search Button under the title -->
+    <button mat-raised-button color="primary" class="search-button">Search</button>
+  </div>
+
+  <!-- Right side with image and calendar -->
+  <div class="calendar-section">
+    <!-- Image -->
+    <img src="assets/images/events.jpg" alt="Volunteer" class="volunteer-image">
+
+    <!-- Date range picker -->
+    <mat-form-field appearance="outline">
+      <mat-label>Select Date Range</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Start date">
+        <input matEndDate placeholder="End date">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+  </div>
+</div>

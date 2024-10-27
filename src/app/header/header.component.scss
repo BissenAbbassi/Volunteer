@@ -1,0 +1,44 @@
+/* Style for the "Volunteer" brand */
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: orange;
+  margin-left: 20px; /* Matches the orange text in the second image */
+}
+
+/* Change the color of the navigation links */
+.nav-link {
+  font-size: 16px;
+  font-weight: normal;
+  color: black; /* Normal link color */
+  margin-right: 10px;
+}
+
+/* Add hover effect on navigation links */
+.nav-link:hover {
+  color: black;
+  border-bottom: 2px solid black; /* Underline effect when hovering */
+}
+
+/* Optional: Change the active link (selected link) style */
+.nav-link.active {
+  color: black;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
+
+/* Force the nav items to the right */
+.navbar-nav {
+  margin-left: auto; /* Ensure the navigation links are aligned to the right */
+}
+
+/* Default style for the navbar links */
+.navbar-nav .nav-link {
+  color: black; /* Default color for links */
+  transition: color 0.3s ease; /* Smooth transition effect */
+}
+
+/* Change color on hover */
+.navbar-nav .nav-link:hover {
+  color: rgb(183, 255, 29); /* The color you want when the mouse hovers */
+}

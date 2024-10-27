@@ -1,0 +1,81 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.text-section {
+  flex: 1;
+  margin-right: 10px;
+  margin-top: 100px; // Reduced margin to move closer to the image
+  h1 {
+    color: rgb(250, 197, 99);
+    font-weight: bold;
+    font-size: 3.5rem; // Increased font size
+    letter-spacing: 0.05em; // Adds spacing between letters
+    line-height: 1.5; // Adjusted line height for better readability
+  }
+  p.lead {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  .search-button {
+    margin-top: 40px;
+    margin-left: 130px;
+    padding: 15px 30px; // Increased padding for a larger button
+    font-size: 1.2rem; // Larger font size
+    background-color: #e3e978;
+    color: white;
+    border: none;
+    border-radius: 8px; // Rounded corners for a more prominent look
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Adds a shadow for depth
+    transition: background-color 0.3s ease;
+  }
+  .search-button:hover {
+    background-color: #dfe743; // Slightly darker shade on hover
+  }
+}
+
+.calendar-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .volunteer-image {
+    width: 500px;
+    margin-bottom: 10px; // Reduced margin to bring image and calendar closer
+  }
+
+  .mat-form-field {
+    width: 300px;
+  }
+}
+
+
+.btn-success {
+  background-color: #7bd25a;
+  border-color: #7bd25a;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-section, .calendar-section {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mat-form-field {
+    width: 100%;
+  }
+}
