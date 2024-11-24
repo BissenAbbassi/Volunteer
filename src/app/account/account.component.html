@@ -1,0 +1,74 @@
+<div class="account-container">
+  <h2>My Account</h2>
+
+  <!-- Flexbox Container -->
+  <div class="main-container">
+
+    <!-- Profile Section (Left) -->
+    <div class="profile-section">
+      <h3>Profile</h3>
+      <div class="profile-details">
+        <!-- Profile Picture -->
+        <div class="profile-picture">
+          <img src="assets\images\profile.jpg" alt="Profile Picture" class="profile-img">
+        </div>
+        <!-- Profile Information -->
+        <div class="profile-info">
+          <p><strong>Name:</strong> John Doe</p>
+          <p><strong>Email:</strong> john.doe.example.com</p>
+          <p><strong>Joined:</strong> January 1, 2022</p>
+        </div>
+      </div>
+      <button class="edit-profile-button">Edit Profile</button>
+    </div>
+
+    <!-- Charts Section (Right) -->
+    <div class="charts-container">
+      <div class="chart-box">
+        <h3>My Donations</h3>
+        <ngx-charts-line-chart
+          [view]="view"
+          [results]="[{ name: 'Donations', series: donations }]"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel">
+        </ngx-charts-line-chart>
+        <p>{{ totalDonations }} DT</p>
+        <button class="donate-button">Donate Now</button>
+      </div>
+
+      <div class="chart-box">
+        <h3>My Volunteering Hours</h3>
+        <ngx-charts-line-chart
+          [view]="view"
+          [results]="[{ name: 'Volunteering Hours', series: volunteeringHours }]"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel">
+        </ngx-charts-line-chart>
+        <p>{{ totalVolunteeringHours }} Volunteering Hours</p>
+        <button class="volunteer-button">Volunteer Now</button>
+      </div>
+
+      <div class="chart-box">
+        <h3>My Charity Work</h3>
+        <!-- Normal Pie Chart -->
+        <ngx-charts-pie-chart
+          [results]="charityWork"
+          [legend]="showLegend">
+        </ngx-charts-pie-chart>
+        <p>{{ totalCharityWorks }} Charity Works</p>
+      </div>
+    </div>
+  </div>
+</div>

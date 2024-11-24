@@ -1,0 +1,9 @@
+<div class="blog-header">
+    <h1>Blog Corner</h1>
+</div>
+
+<div class="container">
+  <div class="post" *ngFor="let post of posts">
+    <app-post [post]="post"></app-post>
+  </div>
+</div>

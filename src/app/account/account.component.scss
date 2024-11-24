@@ -1,0 +1,95 @@
+.account-container {
+  padding: 20px;
+}
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.profile-section {
+  flex: 1;
+  max-width: 500px;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.profile-section h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.profile-details {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture {
+  margin-right: 20px;
+}
+
+.profile-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.profile-info p {
+  font-size: 16px;
+}
+
+.edit-profile-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #f0ad4e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-profile-button:hover {
+  background-color: #ec971f;
+}
+
+.charts-container {
+  flex: 2;
+  max-width: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.chart-box {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.chart-box h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.chart-box p {
+  font-size: 16px;
+  font-weight: bold;
+  color: gray;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #f0ad4e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #ec971f;
+}
