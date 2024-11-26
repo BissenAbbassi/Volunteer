@@ -1,0 +1,104 @@
+<div class="container-fluid py-5 sign-up-container">
+  <div class="row">
+    <!-- Colonne pour le texte à gauche (Create Account) -->
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <div class="left-text">
+        <h2>Create Account</h2>
+      </div>
+      <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" class="sign-up-form">
+        <!-- Prénom -->
+        <div class="mb-3">
+          <label for="firstName" class="form-label">First Name</label>
+          <input
+            type="text"
+            id="firstName"
+            formControlName="firstName"
+            placeholder="First Name"
+            class="form-control"
+          />
+          <div *ngIf="signUpForm.get('firstName')?.invalid && signUpForm.get('firstName')?.touched" class="text-danger">
+            <div *ngIf="signUpForm.get('firstName')?.hasError('required')">First Name is required.</div>
+            <div *ngIf="signUpForm.get('firstName')?.hasError('minlength')">First Name must be at least 2 characters long.</div>
+          </div>
+        </div>
+
+        <!-- Nom -->
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input
+            type="text"
+            id="lastName"
+            formControlName="lastName"
+            placeholder="Last Name"
+            class="form-control"
+          />
+          <div *ngIf="signUpForm.get('lastName')?.invalid && signUpForm.get('lastName')?.touched" class="text-danger">
+            <div *ngIf="signUpForm.get('lastName')?.hasError('required')">Last Name is required.</div>
+            <div *ngIf="signUpForm.get('lastName')?.hasError('minlength')">Last Name must be at least 2 characters long.</div>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            placeholder="Email"
+            class="form-control"
+          />
+          <div *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched" class="text-danger">
+            <div *ngIf="signUpForm.get('email')?.hasError('required')">Email is required.</div>
+            <div *ngIf="signUpForm.get('email')?.hasError('email')">Please enter a valid email address.</div>
+          </div>
+        </div>
+
+        <!-- Mot de passe -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            placeholder="Password"
+            class="form-control"
+          />
+          <div *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched" class="text-danger">
+            <div *ngIf="signUpForm.get('password')?.hasError('required')">Password is required.</div>
+            <div *ngIf="signUpForm.get('password')?.hasError('minlength')">Password must be at least 6 characters long.</div>
+          </div>
+        </div>
+
+        <!-- Confirmation du mot de passe -->
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirm Password</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            formControlName="confirmPassword"
+            placeholder="Confirm Password"
+            class="form-control"
+          />
+          <div *ngIf="signUpForm.get('confirmPassword')?.invalid && signUpForm.get('confirmPassword')?.touched" class="text-danger">
+            <div *ngIf="signUpForm.get('confirmPassword')?.hasError('required')">Confirm Password is required.</div>
+            <div *ngIf="signUpForm.hasError('passwordMismatch')">Passwords do not match.</div>
+          </div>
+        </div>
+
+        <!-- Bouton de soumission -->
+        <div>
+          <button type="submit" [disabled]="signUpForm.invalid" class="btn btn-primary w-100">Sign Up</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Colonne pour le texte à droite (Volunteers are needed) -->
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <div class="right-text">
+        <h2>Volunteers are needed</h2>
+      </div>
+      <img src="assets/images/background.jpg" alt="Background Image" class="img-fluid" />
+    </div>
+  </div>
+</div>

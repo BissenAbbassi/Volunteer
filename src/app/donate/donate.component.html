@@ -1,0 +1,122 @@
+<div class="container py-5">
+  <h2 class="text-center mb-4">Make a donation</h2>
+
+  <div class="row">
+    <!-- Colonne pour le formulaire -->
+    <div class="col-md-6">
+      <form [formGroup]="donateForm" (ngSubmit)="onSubmit()" class="donation-form">
+        <!-- Prénom -->
+        <div class="mb-3">
+          <label for="firstName" class="form-label">First Name</label>
+          <input
+            type="text"
+            id="firstName"
+            formControlName="firstName"
+            placeholder="First Name"
+            class="form-control"
+          />
+          <div *ngIf="donateForm.get('firstName')?.invalid && donateForm.get('firstName')?.touched" class="text-danger">
+            First Name is required (min 2 characters).
+          </div>
+        </div>
+
+        <!-- Nom -->
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input
+            type="text"
+            id="lastName"
+            formControlName="lastName"
+            placeholder="Last Name"
+            class="form-control"
+          />
+          <div *ngIf="donateForm.get('lastName')?.invalid && donateForm.get('lastName')?.touched" class="text-danger">
+            Last Name is required (min 2 characters).
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            placeholder="Email"
+            class="form-control"
+          />
+          <div *ngIf="donateForm.get('email')?.invalid && donateForm.get('email')?.touched" class="text-danger">
+            A valid Email is required.
+          </div>
+        </div>
+
+        <!-- Mode de transaction -->
+        <div class="mb-3">
+          <label class="form-label">Transaction Via</label>
+          <div class="form-check">
+            <input
+              type="radio"
+              id="bank"
+              formControlName="transactionVia"
+              value="Bank"
+              class="form-check-input"
+            />
+            <label for="bank" class="form-check-label">Bank</label>
+          </div>
+          <div class="form-check">
+            <input
+              type="radio"
+              id="edinar"
+              formControlName="transactionVia"
+              value="E-Dinar"
+              class="form-check-input"
+            />
+            <label for="edinar" class="form-check-label">E-Dinar</label>
+          </div>
+          <div *ngIf="donateForm.get('transactionVia')?.invalid && donateForm.get('transactionVia')?.touched" class="text-danger">
+            Transaction mode is required.
+          </div>
+        </div>
+
+        <!-- Numéro de carte -->
+        <div class="mb-3">
+          <label for="cardNumber" class="form-label">Card Number</label>
+          <input
+            type="text"
+            id="cardNumber"
+            formControlName="cardNumber"
+            placeholder="Your card Number"
+            class="form-control"
+          />
+          <div *ngIf="donateForm.get('cardNumber')?.invalid && donateForm.get('cardNumber')?.touched" class="text-danger">
+            Card Number must be 16 digits.
+          </div>
+        </div>
+
+        <!-- Choix de donation -->
+        <div class="mb-3">
+          <label for="donationPurpose" class="form-label">I give donation for:</label>
+          <select id="donationPurpose" formControlName="donationPurpose" class="form-select">
+            <option value="" disabled>Select an option</option>
+            <option *ngFor="let option of donationOptions" [value]="option">
+              {{ option }}
+            </option>
+          </select>
+          <div *ngIf="donateForm.get('donationPurpose')?.invalid && donateForm.get('donationPurpose')?.touched" class="text-danger">
+            Please select a donation purpose.
+          </div>
+        </div>
+
+        <!-- Bouton de soumission -->
+        <div>
+          <button type="submit" [disabled]="donateForm.invalid" class="btn btn-primary w-100">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Colonne pour l'image -->
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <img src="assets/images/donate.jpg" alt="Donation Image" class="img-fluid" />
+    </div>
+  </div>
+</div>

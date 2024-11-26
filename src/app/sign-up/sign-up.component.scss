@@ -1,0 +1,78 @@
+/* Assurez-vous que le body et html prennent toute la hauteur */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Conteneur principal pour le sign-up avec l'image de fond */
+.sign-up-container {
+  background-image: url("/assets/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0;
+}
+
+/* Texte à gauche pour "Create Account" */
+.left-text {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  color: black;
+  font-size: 1.25rem; /* Taille plus petite, proche des titres des champs de formulaire */
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+/* Texte à droite pour "Volunteers are needed" */
+.right-text {
+  position: absolute;
+  top: 25%;
+  right: 5%; /* Déplace le texte un peu plus à droite */
+  color: black;
+  font-size: 1.75rem; /* Taille actuelle */
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+/* Formulaire avec fond semi-transparent */
+.sign-up-form {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+/* Titre du formulaire */
+h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  margin-top: -40px;
+}
+
+/* Classes de Bootstrap pour les formulaires */
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+/* Message d'erreur pour les champs invalides */
+.text-danger {
+  font-size: 0.875em;
+}

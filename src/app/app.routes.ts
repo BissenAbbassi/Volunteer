@@ -4,6 +4,8 @@ import { HeaderComponent } from './header/header.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { BlogComponent } from './blog/blog.component';
 import { AccountComponent } from './account/account.component';
+import { DonateComponent } from './donate/donate.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -11,4 +13,6 @@ export const routes: Routes = [
   { path: 'calendar', component: CalendarComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'account', component: AccountComponent },
+  {path: 'donate', component: DonateComponent},
+  {path: 'sign-up',component: SignUpComponent}
 ];
